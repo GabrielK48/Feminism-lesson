@@ -1,0 +1,2475 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Феминизмът — Урок по история | 12 клас</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #F5EFE6;
+      --blush: #E8B4B8;
+      --terracotta: #C0614C;
+      --deep: #1A0A0E;
+      --ink: #2D1B22;
+      --gold: #C9972A;
+      --sage: #7A9E7E;
+      --light-rose: #F9E4E7;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 3rem;
+      background: rgba(245,239,230,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(192,97,76,0.15);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--terracotta);
+      letter-spacing: 0.05em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      transition: color 0.25s;
+    }
+    .nav-links a:hover { color: var(--terracotta); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 6rem 3rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 60vw;
+      height: 60vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--blush) 0%, transparent 70%);
+      opacity: 0.35;
+      animation: pulse 8s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+    .hero-text { z-index: 1; }
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      animation: fadeUp 0.8s ease both;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 2px;
+      background: var(--terracotta);
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.5rem, 7vw, 6rem);
+      font-weight: 900;
+      line-height: 1;
+      color: var(--deep);
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.8s 0.15s ease both;
+    }
+    .hero-title em {
+      color: var(--terracotta);
+      font-style: italic;
+    }
+    .hero-subtitle {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #5a3a44;
+      max-width: 420px;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--terracotta);
+      color: white;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      transition: transform 0.25s, box-shadow 0.25s;
+      animation: fadeUp 0.8s 0.45s ease both;
+    }
+    .hero-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(192,97,76,0.3);
+    }
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      animation: fadeIn 1.2s 0.2s ease both;
+    }
+    .symbol-ring {
+      width: 380px;
+      height: 380px;
+      position: relative;
+      animation: spin 30s linear infinite;
+    }
+    .symbol-ring svg { width: 100%; height: 100%; }
+    .center-symbol {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: spin 30s linear infinite reverse;
+    }
+    .center-symbol span {
+      font-size: 8rem;
+      color: var(--terracotta);
+      line-height: 1;
+      filter: drop-shadow(0 4px 20px rgba(192,97,76,0.3));
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 6rem 3rem; }
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      color: var(--deep);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── DEFINITION ── */
+    .definition-section {
+      background: var(--deep);
+      color: var(--cream);
+    }
+    .definition-section .section-label { color: var(--blush); }
+    .definition-section .section-title { color: var(--cream); }
+    .definition-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .definition-quote {
+      border-left: 4px solid var(--terracotta);
+      padding-left: 2rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--blush);
+    }
+    .definition-quote cite {
+      display: block;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      font-style: normal;
+      font-family: 'DM Sans', sans-serif;
+      letter-spacing: 0.08em;
+      color: #a89090;
+    }
+    .definition-text {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #c9b8bc;
+      font-weight: 300;
+    }
+    .definition-text strong { color: var(--blush); font-weight: 500; }
+
+    /* ── WAVES ── */
+    .waves-section { background: var(--light-rose); }
+    .waves-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .wave-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: default;
+    }
+    .wave-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(192,97,76,0.15);
+    }
+    .wave-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+    }
+    .wave-card.w1::before { background: var(--terracotta); }
+    .wave-card.w2::before { background: var(--gold); }
+    .wave-card.w3::before { background: var(--sage); }
+    .wave-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--blush);
+      margin-bottom: 0.5rem;
+    }
+    .wave-period {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 1rem;
+    }
+    .wave-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--deep);
+      margin-bottom: 1rem;
+    }
+    .wave-desc {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: #6b4a52;
+      font-weight: 300;
+    }
+    .wave-achievements {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .wave-achievements span {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      color: #4a2a32;
+    }
+    .wave-achievements span::before {
+      content: '✦';
+      color: var(--terracotta);
+      font-size: 0.6rem;
+    }
+
+    /* ── FIGURES ── */
+    .figures-section {
+      background: var(--cream);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .figures-section > * { max-width: none; }
+    .figures-scroll {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .figure-card {
+      background: var(--deep);
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .figure-card:hover { transform: scale(1.03); }
+    .figure-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--terracotta);
+    }
+    .figure-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--terracotta);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+    }
+    .figure-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 0.3rem;
+    }
+    .figure-years {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: var(--blush);
+      margin-bottom: 0.8rem;
+      font-weight: 500;
+    }
+    .figure-role {
+      font-size: 0.78rem;
+      color: var(--terracotta);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+    .figure-bio {
+      font-size: 0.82rem;
+      line-height: 1.65;
+      color: #c9b8bc;
+      font-weight: 300;
+    }
+
+    /* ── TIMELINE ── */
+    .timeline-section { background: white; }
+    .timeline-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .timeline-inner::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--terracotta), var(--gold), var(--sage));
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 1fr 60px 1fr;
+      align-items: start;
+      gap: 0;
+      margin-bottom: 3rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s, transform 0.6s;
+    }
+    .timeline-item.visible { opacity: 1; transform: none; }
+    .timeline-left { padding-right: 2rem; text-align: right; }
+    .timeline-right { padding-left: 2rem; }
+    .timeline-dot {
+      width: 16px;
+      height: 16px;
+      background: var(--terracotta);
+      border-radius: 50%;
+      margin: 0.3rem auto 0;
+      border: 3px solid white;
+      box-shadow: 0 0 0 3px var(--terracotta);
+    }
+    .tl-year {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--terracotta);
+    }
+    .tl-event {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+    .tl-event strong {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--deep);
+      margin-bottom: 0.2rem;
+    }
+
+    /* ── QUOTES STRIP ── */
+    .quotes-strip {
+      background: var(--terracotta);
+      padding: 4rem 3rem;
+      overflow: hidden;
+    }
+    .quotes-track {
+      display: flex;
+      gap: 4rem;
+      animation: slide 25s linear infinite;
+      width: max-content;
+    }
+    @keyframes slide {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .quote-item {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: white;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .quote-item::after {
+      content: '♀';
+      font-style: normal;
+      font-family: sans-serif;
+      opacity: 0.4;
+    }
+
+    /* ── IMPACT ── */
+    .impact-section {
+      background: var(--deep);
+      color: white;
+    }
+    .impact-section .section-label { color: var(--blush); }
+    .impact-section .section-title { color: white; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .stat-box {
+      text-align: center;
+      padding: 2rem;
+      border: 1px solid rgba(232,180,184,0.2);
+      border-radius: 16px;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .stat-box:hover {
+      border-color: var(--blush);
+      background: rgba(232,180,184,0.05);
+    }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--blush);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      line-height: 1.5;
+      color: #c9b8bc;
+      margin-top: 0.5rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    .footer-meta {
+      font-size: 0.78rem;
+      color: #a89090;
+      line-height: 1.7;
+      text-align: right;
+    }
+    .footer-qr {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1.5rem;
+      background: rgba(245,239,230,0.05);
+      border-radius: 16px;
+      border: 1px solid rgba(232,180,184,0.15);
+    }
+    .footer-qr img {
+      width: 140px;
+      height: 140px;
+      border-radius: 8px;
+      background: white;
+      padding: 8px;
+    }
+    .footer-qr-text {
+      font-size: 0.75rem;
+      color: #a89090;
+      text-align: center;
+      line-height: 1.4;
+    }
+    .mobile-qr-section {
+      display: none;
+      text-align: center;
+      padding: 3rem 1.5rem;
+      background: var(--light-rose);
+    }
+    .mobile-qr-section img {
+      width: 200px;
+      height: 200px;
+      border-radius: 12px;
+      background: white;
+      padding: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    }
+    .mobile-qr-section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--deep);
+      margin: 1.5rem 0 0.5rem;
+    }
+    .mobile-qr-section p {
+      font-size: 0.88rem;
+      color: #7a5a62;
+      line-height: 1.6;
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ── BULGARIA ── */
+    .bulgaria-section {
+      background: linear-gradient(135deg, #f0ede8 0%, #e8e0d5 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .bulgaria-section::before {
+      content: 'БГ';
+      position: absolute;
+      right: -2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: 18rem;
+      font-weight: 900;
+      color: rgba(192,97,76,0.06);
+      pointer-events: none;
+      line-height: 1;
+    }
+    .bg-intro-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 5rem;
+      align-items: start;
+      max-width: 1200px;
+      margin: 0 auto 5rem;
+    }
+    .bg-flag-stripe {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 1.5rem;
+    }
+    .bg-flag-stripe span {
+      height: 6px;
+      flex: 1;
+      border-radius: 3px;
+    }
+    .bg-flag-stripe .white  { background: #FFFFFF; border: 1px solid #e0d8d0; }
+    .bg-flag-stripe .green  { background: #00966E; }
+    .bg-flag-stripe .red    { background: #D62612; }
+    .bg-sidebar {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 8px 40px rgba(192,97,76,0.08);
+    }
+    .bg-sidebar h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--deep);
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--light-rose);
+    }
+    .bg-stat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #f0eae8;
+      font-size: 0.82rem;
+    }
+    .bg-stat-row:last-child { border-bottom: none; }
+    .bg-stat-label { color: #7a5a62; font-weight: 300; }
+    .bg-stat-value { font-weight: 600; color: var(--terracotta); font-size: 0.9rem; }
+
+    .bg-timeline {
+      max-width: 1200px;
+      margin: 0 auto 4rem;
+    }
+    .bg-timeline-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--deep);
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .bg-timeline-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--blush);
+    }
+    .bg-events {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    .bg-event {
+      background: white;
+      border-radius: 14px;
+      padding: 1.5rem;
+      border-top: 4px solid var(--terracotta);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .bg-event:nth-child(2) { border-top-color: var(--gold); }
+    .bg-event:nth-child(3) { border-top-color: var(--sage); }
+    .bg-event:nth-child(4) { border-top-color: #7a6ea8; }
+    .bg-event:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
+    .bg-event-year {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--terracotta);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .bg-event:nth-child(2) .bg-event-year { color: var(--gold); }
+    .bg-event:nth-child(3) .bg-event-year { color: var(--sage); }
+    .bg-event:nth-child(4) .bg-event-year { color: #7a6ea8; }
+    .bg-event-title {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--deep);
+      margin-bottom: 0.5rem;
+    }
+    .bg-event-desc {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: #6b4a52;
+      font-weight: 300;
+    }
+
+    .bg-figures-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto 4rem;
+    }
+    .bg-figure {
+      background: var(--deep);
+      border-radius: 16px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .bg-figure:hover { transform: translateY(-6px); }
+    .bg-figure::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--terracotta), var(--gold));
+    }
+    .bg-figure-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .bg-figure-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 0.2rem;
+    }
+    .bg-figure-dates { font-size: 0.72rem; color: var(--blush); letter-spacing: 0.1em; margin-bottom: 0.6rem; }
+    .bg-figure-role { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--terracotta); margin-bottom: 0.75rem; font-weight: 500; }
+    .bg-figure-bio { font-size: 0.82rem; line-height: 1.65; color: #c9b8bc; font-weight: 300; }
+
+    .bg-challenges {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    .bg-challenges h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--deep);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .bg-challenges h4 span { font-size: 1.3rem; }
+    .challenge-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+      align-items: start;
+    }
+    .challenge-icon {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      border-radius: 8px;
+      background: var(--light-rose);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+    .challenge-text { font-size: 0.85rem; line-height: 1.6; color: #5a3a44; }
+    .challenge-text strong { color: var(--deep); font-size: 0.88rem; display: block; margin-bottom: 0.2rem; }
+
+    /* ── QUIZ SECTION ── */
+    .quiz-section {
+      background: linear-gradient(135deg, #1A0A0E 0%, #2D1B22 100%);
+      padding: 6rem 3rem;
+    }
+    .quiz-section .section-label { color: var(--blush); }
+    .quiz-section .section-title { color: var(--cream); margin-bottom: 2.5rem; }
+    .quiz-container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .quiz-progress-bar {
+      width: 100%;
+      height: 4px;
+      background: rgba(232,180,184,0.15);
+      border-radius: 2px;
+      margin-bottom: 2.5rem;
+      overflow: hidden;
+    }
+    .quiz-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--terracotta), var(--gold));
+      border-radius: 2px;
+      transition: width 0.5s ease;
+    }
+    .quiz-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(232,180,184,0.15);
+      border-radius: 24px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .quiz-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--terracotta), var(--gold), var(--sage));
+    }
+    .quiz-question-num {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--blush);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+    .quiz-question-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.4;
+      margin-bottom: 2rem;
+    }
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .quiz-option {
+      background: rgba(255,255,255,0.05);
+      border: 1.5px solid rgba(232,180,184,0.15);
+      border-radius: 14px;
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      font-size: 0.92rem;
+      color: #c9b8bc;
+      line-height: 1.5;
+      transition: all 0.25s;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-align: left;
+    }
+    .quiz-option-letter {
+      width: 28px; height: 28px;
+      min-width: 28px;
+      border-radius: 50%;
+      background: rgba(232,180,184,0.1);
+      border: 1px solid rgba(232,180,184,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--blush);
+      letter-spacing: 0;
+      transition: all 0.25s;
+    }
+    .quiz-option:hover:not(.selected):not(.correct):not(.wrong) {
+      border-color: rgba(232,180,184,0.5);
+      background: rgba(232,180,184,0.08);
+      color: var(--cream);
+      transform: translateX(4px);
+    }
+    .quiz-option.correct {
+      border-color: var(--sage);
+      background: rgba(122,158,126,0.15);
+      color: #c5dfc7;
+    }
+    .quiz-option.correct .quiz-option-letter { background: var(--sage); color: white; border-color: var(--sage); }
+    .quiz-option.wrong {
+      border-color: var(--terracotta);
+      background: rgba(192,97,76,0.12);
+      color: #e8b4b8;
+    }
+    .quiz-option.wrong .quiz-option-letter { background: var(--terracotta); color: white; border-color: var(--terracotta); }
+    .quiz-feedback {
+      margin-top: 1.5rem;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      display: none;
+    }
+    .quiz-feedback.show { display: block; animation: fadeUp 0.4s ease both; }
+    .quiz-feedback.correct-fb { background: rgba(122,158,126,0.15); color: #c5dfc7; border-left: 3px solid var(--sage); }
+    .quiz-feedback.wrong-fb { background: rgba(192,97,76,0.12); color: #e8b4b8; border-left: 3px solid var(--terracotta); }
+    .quiz-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2rem;
+    }
+    .quiz-btn {
+      background: var(--terracotta);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.75rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      font-family: 'DM Sans', sans-serif;
+      letter-spacing: 0.05em;
+    }
+    .quiz-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(192,97,76,0.3); }
+    .quiz-btn:disabled { opacity: 0.35; pointer-events: none; }
+    .quiz-btn.secondary {
+      background: transparent;
+      border: 1.5px solid rgba(232,180,184,0.3);
+      color: var(--blush);
+    }
+    .quiz-btn.secondary:hover { border-color: var(--blush); box-shadow: none; }
+    .quiz-score-display {
+      font-size: 0.82rem;
+      color: #a89090;
+    }
+    .quiz-result {
+      text-align: center;
+      padding: 3rem 2rem;
+      display: none;
+    }
+    .quiz-result.show { display: block; animation: fadeUp 0.6s ease both; }
+    .quiz-result-score {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      font-weight: 900;
+      color: var(--blush);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .quiz-result-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--cream);
+      margin-bottom: 1rem;
+    }
+    .quiz-result-msg {
+      font-size: 0.95rem;
+      color: #c9b8bc;
+      line-height: 1.7;
+      max-width: 440px;
+      margin: 0 auto 2rem;
+      font-weight: 300;
+    }
+
+    /* ── POPUP MODAL ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(26,10,14,0.85);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      animation: fadeIn 0.3s ease;
+    }
+    .modal-overlay.show { display: flex; }
+    .modal-content {
+      background: var(--cream);
+      border-radius: 24px;
+      max-width: 650px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      animation: slideUp 0.4s ease both;
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .modal-header {
+      background: linear-gradient(135deg, var(--terracotta), var(--gold));
+      padding: 2rem 2.5rem;
+      border-radius: 24px 24px 0 0;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 1.5rem; right: 1.5rem;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: white;
+      font-size: 1.3rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      line-height: 1;
+    }
+    .modal-close:hover {
+      background: rgba(255,255,255,0.3);
+      transform: rotate(90deg);
+    }
+    .modal-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+    .modal-subtitle {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.08em;
+    }
+    .modal-body {
+      padding: 2rem 2.5rem;
+    }
+    .modal-section {
+      margin-bottom: 1.75rem;
+    }
+    .modal-section:last-child { margin-bottom: 0; }
+    .modal-section h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--deep);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .modal-section p {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: #5a3a44;
+      font-weight: 300;
+    }
+    .modal-section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .modal-section li {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: #6b4a52;
+      padding-left: 1.5rem;
+      position: relative;
+      margin-bottom: 0.5rem;
+    }
+    .modal-section li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--terracotta);
+      font-size: 0.7rem;
+    }
+    .wiki-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1rem;
+      background: var(--light-rose);
+      border: 1px solid var(--blush);
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.82rem;
+      color: var(--terracotta);
+      font-weight: 500;
+      transition: all 0.2s;
+      margin-top: 1rem;
+      display: inline-flex;
+    }
+    .wiki-link:hover {
+      background: var(--blush);
+      color: white;
+      transform: translateY(-2px);
+    }
+    .wiki-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      background: rgba(192,97,76,0.15);
+      border-radius: 4px;
+      font-size: 0.7rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-left: 0.35rem;
+      text-decoration: none;
+      color: var(--terracotta);
+    }
+    .wiki-icon:hover {
+      background: var(--terracotta);
+      color: white;
+      transform: scale(1.1);
+    }
+    .info-trigger {
+      color: var(--terracotta);
+      cursor: pointer;
+      border-bottom: 1.5px dotted var(--terracotta);
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .info-trigger:hover {
+      border-bottom-style: solid;
+      color: var(--deep);
+    }
+
+    /* ── TOOLTIP ── */
+    .tooltip-term {
+      position: relative;
+      color: var(--terracotta);
+      border-bottom: 1.5px dotted var(--terracotta);
+      cursor: help;
+    }
+    .tooltip-term:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--deep);
+      color: var(--cream);
+      padding: 0.5rem 0.75rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      white-space: nowrap;
+      margin-bottom: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 100;
+      animation: fadeIn 0.2s ease;
+    }
+    .tooltip-term:hover::before {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-color: var(--deep);
+      margin-bottom: -5px;
+    }
+
+    /* ── MOBILE HAMBURGER ── */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--ink);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .figures-scroll { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .waves-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+
+    @media (max-width: 900px) {
+      .bg-intro-grid, .bg-events, .bg-figures-grid, .bg-challenges { grid-template-columns: 1fr; }
+      .bg-events { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-toggle { display: flex; }
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 60px; left: 0; right: 0;
+        background: rgba(245,239,230,0.97);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        padding: 1.5rem 2rem 2rem;
+        gap: 0;
+        border-bottom: 1px solid rgba(192,97,76,0.15);
+        z-index: 99;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { border-bottom: 1px solid rgba(192,97,76,0.08); }
+      .nav-links a {
+        display: block;
+        padding: 0.9rem 0;
+        font-size: 0.9rem;
+      }
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 5rem 1.5rem 3rem;
+        min-height: auto;
+        padding-bottom: 4rem;
+      }
+      .hero-subtitle { max-width: 100%; }
+      .hero-visual { display: none; }
+      .hero-eyebrow { justify-content: center; }
+      .definition-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .waves-grid { grid-template-columns: 1fr; }
+      .figures-scroll { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .bg-events { grid-template-columns: 1fr; }
+      .bg-event {
+        padding: 1.25rem;
+      }
+      .bg-event-year {
+        font-size: 1.3rem;
+      }
+      .bg-event-title {
+        font-size: 0.85rem;
+      }
+      .bg-event-desc {
+        font-size: 0.78rem;
+        line-height: 1.65;
+      }
+      .bg-figures-grid { grid-template-columns: 1fr 1fr !important; }
+      .bg-world-grid { grid-template-columns: 1fr !important; }
+      .comparison-grid { grid-template-columns: 1fr !important; }
+      .bg-challenges { grid-template-columns: 1fr; gap: 2rem; }
+      .bg-intro-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .bg-modern-grid { grid-template-columns: 1fr !important; }
+      section { padding: 4rem 1.25rem; }
+      .quiz-section { padding: 4rem 1.25rem; }
+      .quiz-card { padding: 1.75rem 1.25rem; }
+      .quiz-question-text { font-size: 1.15rem; }
+      footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+      .footer-meta { text-align: center; }
+      .footer-qr { display: none; }
+      .mobile-qr-section { display: block; }
+      .timeline-inner::before { 
+        left: 50%; 
+        transform: translateX(-50%);
+      }
+      .timeline-item { 
+        grid-template-columns: 1fr 40px 1fr;
+        gap: 0;
+        margin-bottom: 2.5rem;
+      }
+      .timeline-left { 
+        display: block;
+        padding-right: 1rem;
+        text-align: right;
+      }
+      .timeline-right { 
+        padding-left: 1rem;
+      }
+      .timeline-dot {
+        width: 14px;
+        height: 14px;
+        border: 2.5px solid white;
+        box-shadow: 0 0 0 2.5px var(--terracotta);
+        margin-top: 0.3rem;
+      }
+      .tl-year {
+        font-size: 1.15rem;
+      }
+      .tl-event {
+        font-size: 0.85rem;
+        line-height: 1.55;
+      }
+      .tl-event strong {
+        font-size: 0.88rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stats-grid { grid-template-columns: 1fr; }
+      .stat-number { font-size: 2.5rem; }
+      .hero-title { font-size: clamp(2.8rem, 14vw, 4rem); }
+      .symbol-ring { width: 280px; height: 280px; }
+      .quiz-option { padding: 0.85rem 1rem; font-size: 0.85rem; }
+      nav { padding: 0.85rem 1rem; }
+      .bg-figures-grid { grid-template-columns: 1fr !important; }
+      .timeline-item { 
+        grid-template-columns: 1fr 36px 1fr;
+        margin-bottom: 2rem;
+      }
+      .timeline-left { padding-right: 0.75rem; }
+      .timeline-right { padding-left: 0.75rem; }
+      .tl-year { font-size: 1.05rem; }
+      .tl-event { font-size: 0.8rem; line-height: 1.6; }
+      .tl-event strong { font-size: 0.83rem; }
+    }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-logo">♀ Феминизмът</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#definition" onclick="closeNav()">Определение</a></li>
+    <li><a href="#waves" onclick="closeNav()">Вълни</a></li>
+    <li><a href="#figures" onclick="closeNav()">Личности</a></li>
+    <li><a href="#timeline" onclick="closeNav()">Хронология</a></li>
+    <li><a href="#bulgaria" onclick="closeNav()">България</a></li>
+    <li><a href="#impact" onclick="closeNav()">Значение</a></li>
+    <li><a href="#quiz" onclick="closeNav()">Тест</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Меню" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow">Урок по история · 12 клас</div>
+    <h1 class="hero-title">Феми&shy;<em>низ&shy;мът</em></h1>
+    <p class="hero-subtitle">
+      Движение за равенство, което променя хода на историята — от суфражетките до днес. Разгледайте борбата за права, вълните на промяна и жените, които изграждат съвременния свят.
+    </p>
+    <a href="#definition" class="hero-cta">Разгледай урока →</a>
+  </div>
+  <div class="hero-visual">
+    <div class="symbol-ring">
+      <svg viewBox="0 0 380 380">
+        <circle cx="190" cy="190" r="180" fill="none" stroke="var(--blush)" stroke-width="1" stroke-dasharray="8 12" />
+        <circle cx="190" cy="190" r="150" fill="none" stroke="var(--terracotta)" stroke-width="0.5" stroke-dasharray="4 20" />
+        <text font-family="Playfair Display,serif" font-size="13" fill="var(--terracotta)" opacity="0.7">
+          <textPath href="#circle-path">
+            Равенство · Справедливост · Свобода · Смелост · Равенство · Справедливост · Свобода · Смелост ·
+          </textPath>
+        </text>
+        <defs>
+          <path id="circle-path" d="M 190,10 a 180,180 0 0 1 0,360 a 180,180 0 0 1 0,-360" />
+        </defs>
+      </svg>
+      <div class="center-symbol"><span>♀</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- DEFINITION -->
+<section class="definition-section" id="definition">
+  <div class="definition-grid reveal">
+    <div>
+      <div class="section-label">Какво е феминизъм?</div>
+      <h2 class="section-title">Политическо, социално и икономическо равенство</h2>
+      <div class="definition-quote">
+        „Феминизмът е радикалната нотация, че жените са хора."
+        <cite>— Шийла Роуботам</cite>
+      </div>
+    </div>
+    <div class="definition-text">
+      <p><strong>Феминизмът</strong> е идеологическо и обществено движение, което се бори за политическо, икономическо, лично и социално равенство между половете.</p>
+      <br>
+      <p>Думата идва от <span class="tooltip-term" data-tooltip="Латински: жена">латинското „femina"</span> (жена) и навлиза в употреба в края на XIX век. Феминизмът не е единна идеология — той обхваща множество течения: <span class="tooltip-term" data-tooltip="Фокус върху правни реформи и равни права">либерален</span>, <span class="tooltip-term" data-tooltip="Вижда патриархата като основен проблем">радикален</span>, <span class="tooltip-term" data-tooltip="Свързва феминизма с класова борба">социалистически</span>, <span class="tooltip-term" data-tooltip="Отчита пресичането на пол, раса, класа">пресечен (intersectional)</span> и много други.</p>
+      <br>
+      <p>В основата на всички феминистки движения стои убеждението, че жените и мъжете трябва да имат <strong>равни права и възможности</strong> — в политиката, икономиката и личния живот.</p>
+      <a href="https://bg.wikipedia.org/wiki/Феминизъм" target="_blank" rel="noopener" class="wiki-link">
+        📖 Виж повече във Wikipedia
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- WAVES -->
+<section class="waves-section" id="waves">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="section-label reveal">Историческо развитие</div>
+    <h2 class="section-title reveal">Трите вълни на феминизма</h2>
+    <div class="waves-grid" style="margin-top:3rem">
+
+      <div class="wave-card w1 reveal">
+        <div class="wave-number">I</div>
+        <div class="wave-period">Краят на XIX – нач. на XX в.</div>
+        <div class="wave-title">Суфражизъм и граждански права</div>
+        <p class="wave-desc">Първата вълна се съсредоточава върху правото на глас и законовото равенство. Жените организират протести, шествия и актове на граждански неподчинение.</p>
+        <div class="wave-achievements">
+          <span>Право на глас в Нова Зеландия (1893)</span>
+          <span>Право на глас в САЩ — 19-та поправка (1920)</span>
+          <span>Достъп до образование и собственост</span>
+          <span>Движение на суфражетките в Великобритания</span>
+        </div>
+      </div>
+
+      <div class="wave-card w2 reveal">
+        <div class="wave-number">II</div>
+        <div class="wave-period">1960-те – 1980-те</div>
+        <div class="wave-title">„Личното е политическо"</div>
+        <p class="wave-desc">Втората вълна разширява борбата — репродуктивни права, равно заплащане, сексуалност и насилие над жените стават обществени теми.</p>
+        <div class="wave-achievements">
+          <span>Закон за равно заплащане (САЩ, 1963)</span>
+          <span>Решението Roe v. Wade (1973)</span>
+          <span>Женски изследвания в университетите</span>
+          <span>Движение срещу домашното насилие</span>
+        </div>
+      </div>
+
+      <div class="wave-card w3 reveal">
+        <div class="wave-number">III</div>
+        <div class="wave-period">1990-те – днес</div>
+        <div class="wave-title">Многообразие и пресечност</div>
+        <p class="wave-desc">Третата вълна подчертава, че опитът на жените е различен в зависимост от раса, класа, сексуалност и културен контекст. Интернет усилва движението.</p>
+        <div class="wave-achievements">
+          <span>Движението #MeToo (2017)</span>
+          <span>Intersectional феминизъм (Кимберлé Крийншоу)</span>
+          <span>ЛГБТК+ права и включване</span>
+          <span>Глобален феминизъм и деколонизация</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SUFFRAGISM VS FEMINISM COMPARISON -->
+<section style="padding:6rem 3rem;background:var(--cream);">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="section-label reveal">Разлики и връзки</div>
+    <h2 class="section-title reveal">Суфражизъм vs Феминизъм</h2>
+    
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem" class="comparison-grid">
+      
+      <div class="reveal" style="background:var(--light-rose);padding:2.5rem;border-radius:20px;border-left:6px solid var(--terracotta);">
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--terracotta);margin-bottom:1.5rem;">🗳️ Суфражизъм</h3>
+        
+        <div style="margin-bottom:2rem;">
+          <h4 style="font-size:1rem;color:var(--deep);font-weight:600;margin-bottom:0.75rem;">Определение</h4>
+          <p style="font-size:0.9rem;line-height:1.7;color:#5a3a44;font-weight:300;">
+            Движението за <strong>право на глас</strong> за жените. Термин специфичен за борбата за избирателни права в края на XIX и началото на XX век.
+          </p>
+        </div>
+
+        <div style="margin-bottom:2rem;">
+          <h4 style="font-size:1rem;color:var(--deep);font-weight:600;margin-bottom:0.75rem;">Фокус</h4>
+          <p style="font-size:0.9rem;line-height:1.7;color:#5a3a44;font-weight:300;">
+            <strong>Еднопосочен:</strong> Постигане на политическо равенство чрез избирателно право.
+          </p>
+        </div>
+
+        <div style="margin-bottom:2rem;">
+          <h4 style="font-size:1rem;color:var(--deep);font-weight:600;margin-bottom:0.75rem;">Период</h4>
+          <p style="font-size:0.9rem;line-height:1.7;color:#5a3a44;font-weight:300;">
+            Активен най-вече в периода <strong>1870-1920</strong> г. (съвпада с Първата вълна на феминизма).
+          </p>
+        </div>
+
+        <div style="margin-bottom:2rem;">
+          <h4 style="font-size:1rem;color:var(--deep);font-weight:600;margin-bottom:0.75rem;">Методи</h4>
+          <p style="font-size:0.9rem;line-height:1.7;color:#5a3a44;font-weight:300;">
+            Шествия, петиции, граждански неподчинение, гладни стачки (особено във Великобритания).
+          </p>
+        </div>
+
+        <div style="background:rgba(192,97,76,0.1);padding:1.25rem;border-radius:12px;">
+          <p style="font-size:0.85rem;line-height:1.6;color:var(--deep);font-style:italic;">
+            💡 <strong>Ключова фигура:</strong> Емелин Панкхърст (Великобритания) основава движението на суфражетките през 1903 г.
+          </p>
+        </div>
+      </div>
+
+      <div class="reveal" style="background:white;padding:2.5rem;border-radius:20px;border-left:6px solid var(--gold);">
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--gold);margin-bottom:1.5rem;">✊ Феминизъм</h3>
+        
+        <div style="margin-bottom:2rem;">
+          <h4 style="font-size:1rem;color:var(--deep);font-weight:600;margin-bottom:0.75rem;">Определение</h4>
+          <p style="font-size:0.9rem;line-height:1.7;color:#5a3a44;font-weight:300;">
+            Широко идеологическо и социално движение за <strong>пълно равенство</strong> между половете в политиката, икономиката, културата и личния живот.
+          </p>
+        </div>
+
+        <div style="margin-bottom:2rem;">
+          <h4 style="font-size:1rem;color:var(--deep);font-weight:600;margin-bottom:0.75rem;">Фокус</h4>
+          <p style="font-size:0.9rem;line-height:1.7;color:#5a3a44;font-weight:300;">
+            <strong>Многопластов:</strong> Избирателни права, икономическо равенство, репродуктивна автономия, борба срещу насилие, културни норми, пресечност (раса, класа, сексуалност).
+          </p>
+        </div>
+
+        <div style="margin-bottom:2rem;">
+          <h4 style="font-size:1rem;color:var(--deep);font-weight:600;margin-bottom:0.75rem;">Период</h4>
+          <p style="font-size:0.9rem;line-height:1.7;color:#5a3a44;font-weight:300;">
+            Траен от <strong>края на XVIII век до днес</strong>, преминава през три основни вълни с различни акценти.
+          </p>
+        </div>
+
+        <div style="margin-bottom:2rem;">
+          <h4 style="font-size:1rem;color:var(--deep);font-weight:600;margin-bottom:0.75rem;">Методи</h4>
+          <p style="font-size:0.9rem;line-height:1.7;color:#5a3a44;font-weight:300;">
+            Активизъм, законодателни реформи, образование, културна критика, научни изследвания, дигитални кампании (#MeToo).
+          </p>
+        </div>
+
+        <div style="background:rgba(201,151,42,0.1);padding:1.25rem;border-radius:12px;">
+          <p style="font-size:0.85rem;line-height:1.6;color:var(--deep);font-style:italic;">
+            💡 <strong>Еволюция:</strong> Феминизмът се адаптира и разширява с всяка епоха, откликвайки на нови предизвикателства.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Relationship explanation -->
+    <div class="reveal" style="margin-top:3rem;padding:2.5rem;background:linear-gradient(135deg, var(--terracotta), var(--gold));border-radius:20px;color:white;">
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:1.25rem;text-align:center;">Връзката между двете</h3>
+      <p style="font-size:1rem;line-height:1.8;text-align:center;max-width:900px;margin:0 auto;font-weight:300;">
+        Суфражизмът е <strong>част от феминизма</strong> — конкретна кампания с ясна цел (право на глас), която е ключов момент от <strong>Първата вълна на феминизма</strong>. След постигането на избирателни права феминизмът продължава да се бори за по-широки цели: икономическо равенство, репродуктивни права, борба срещу насилието и културната трансформация. Суфражистките поставят основата, но феминизмът изгражда цялата сграда на равенството.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- KEY FIGURES -->
+<section style="padding:6rem 3rem;background:var(--cream);" id="figures">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="section-label reveal">Ключови личности</div>
+    <h2 class="section-title reveal">Жените, които промениха света</h2>
+    <div class="figures-scroll">
+
+      <div class="figure-card reveal">
+        <div class="figure-avatar">✍</div>
+        <div class="figure-name">
+          Мери Уолстъункрафт
+          <a href="https://bg.wikipedia.org/wiki/Мери_Уолстънкрафт" target="_blank" rel="noopener" class="wiki-icon" title="Wikipedia">W</a>
+        </div>
+        <div class="figure-years">1759 – 1797</div>
+        <div class="figure-role">Философ · Автор</div>
+        <p class="figure-bio">В „Защита на правата на жената" (1792) тя формулира за пръв път аргумент за равно образование и гражданство — основата на модерния феминизъм. <span class="info-trigger" onclick="openModal('wollstonecraft')">Още →</span></p>
+      </div>
+
+      <div class="figure-card reveal">
+        <div class="figure-avatar">⚖️</div>
+        <div class="figure-name">
+          Сюзан Б. Антъни
+          <a href="https://bg.wikipedia.org/wiki/Сюзан_Антъни" target="_blank" rel="noopener" class="wiki-icon" title="Wikipedia">W</a>
+        </div>
+        <div class="figure-years">1820 – 1906</div>
+        <div class="figure-role">Активист · Суфражетка</div>
+        <p class="figure-bio">Посвещава живота си на правото на глас за жените в САЩ. Арестувана е за гласуване на изборите през 1872 г. — смела постъпка за епохата. <span class="info-trigger" onclick="openModal('anthony')">Още →</span></p>
+      </div>
+
+      <div class="figure-card reveal">
+        <div class="figure-avatar">📖</div>
+        <div class="figure-name">
+          Симон дьо Бовоар
+          <a href="https://bg.wikipedia.org/wiki/Симон_дьо_Бовоар" target="_blank" rel="noopener" class="wiki-icon" title="Wikipedia">W</a>
+        </div>
+        <div class="figure-years">1908 – 1986</div>
+        <div class="figure-role">Философ · Писателка</div>
+        <p class="figure-bio">„Вторият пол" (1949) анализира как жените са конструирани като „другото" в обществото — ключов текст на феминистката теория. <span class="info-trigger" onclick="openModal('beauvoir')">Още →</span></p>
+      </div>
+
+      <div class="figure-card reveal">
+        <div class="figure-avatar">✊</div>
+        <div class="figure-name">
+          Белл Хукс
+          <a href="https://en.wikipedia.org/wiki/Bell_hooks" target="_blank" rel="noopener" class="wiki-icon" title="Wikipedia">W</a>
+        </div>
+        <div class="figure-years">1952 – 2021</div>
+        <div class="figure-role">Теоретик · Активист</div>
+        <p class="figure-bio">Свързва феминизма с расизма и класовото неравенство. „Феминизмът е за всички" разширява движението отвъд белите жени от средната класа. <span class="info-trigger" onclick="openModal('hooks')">Още →</span></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MOVING QUOTES -->
+<div class="quotes-strip">
+  <div class="quotes-track">
+    <span class="quote-item">„Добре държащите се жени рядко правят история." — Лорел Тчерки</span>
+    <span class="quote-item">„Феминизмът е убеждението, че жените трябва да имат равни права с мъжете." — Чимаманда Нгози Адичи</span>
+    <span class="quote-item">„Никой не се ражда жена — жена се става." — Симон дьо Бовоар</span>
+    <span class="quote-item">„Ако жените не харесват условията, нека ги сменят." — Сюзан Б. Антъни</span>
+    <span class="quote-item">„Добре държащите се жени рядко правят история." — Лорел Тчерки</span>
+    <span class="quote-item">„Феминизмът е убеждението, че жените трябва да имат равни права с мъжете." — Чимаманда Нгози Адичи</span>
+    <span class="quote-item">„Никой не се ражда жена — жена се става." — Симон дьо Бовоар</span>
+    <span class="quote-item">„Ако жените не харесват условията, нека ги сменят." — Сюзан Б. Антъни</span>
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<section class="timeline-section" id="timeline" style="padding:6rem 3rem;">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="section-label reveal">Хронология</div>
+    <h2 class="section-title reveal" style="text-align:center;margin-bottom:4rem">Ключови моменти</h2>
+    <div class="timeline-inner">
+
+      <div class="timeline-item">
+        <div class="timeline-left"><span class="tl-year">1792</span></div>
+        <div><div class="timeline-dot"></div></div>
+        <div class="timeline-right"><div class="tl-event"><strong>„Защита на правата на жената"</strong> Мери Уолстъункрафт публикува основополагащия феминистки текст.</div></div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left"><div class="tl-event" style="text-align:right"><strong>Декларацията от Сенека Фолс</strong> Първата конференция за правата на жените в САЩ. Приета е декларация за равенство.</div></div>
+        <div><div class="timeline-dot"></div></div>
+        <div class="timeline-right"><span class="tl-year">1848</span></div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left"><span class="tl-year">1893</span></div>
+        <div><div class="timeline-dot"></div></div>
+        <div class="timeline-right"><div class="tl-event"><strong>Право на глас в Нова Зеландия</strong> Първата страна в света, която дава право на глас на жените.</div></div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left"><div class="tl-event" style="text-align:right"><strong>19-та поправка в САЩ</strong> Жените в Съединените щати получават право да гласуват.</div></div>
+        <div><div class="timeline-dot"></div></div>
+        <div class="timeline-right"><span class="tl-year">1920</span></div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left"><span class="tl-year">1949</span></div>
+        <div><div class="timeline-dot"></div></div>
+        <div class="timeline-right"><div class="tl-event"><strong>„Вторият пол" на Симон дьо Бовоар</strong> Революционна книга за ролята на жената в обществото.</div></div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left"><div class="tl-event" style="text-align:right"><strong>Движението за граждански права</strong> Феминизмът се свързва с борбата срещу расизма в Америка.</div></div>
+        <div><div class="timeline-dot"></div></div>
+        <div class="timeline-right"><span class="tl-year">1960-те</span></div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left"><span class="tl-year">2017</span></div>
+        <div><div class="timeline-dot"></div></div>
+        <div class="timeline-right"><div class="tl-event"><strong>#MeToo</strong> Глобалното движение срещу сексуалния тормоз променя обществения разговор.</div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- БЪЛГАРИЯ -->
+<section class="bulgaria-section" id="bulgaria" style="padding:6rem 3rem;">
+
+  <!-- Intro -->
+  <div class="bg-intro-grid reveal">
+    <div>
+      <div class="bg-flag-stripe">
+        <span class="white"></span>
+        <span class="green"></span>
+        <span class="red"></span>
+      </div>
+      <div class="section-label">Феминизмът у нас</div>
+      <h2 class="section-title">България и борбата за равенство</h2>
+      <p style="font-size:1rem;line-height:1.8;color:#5a3a44;font-weight:300;margin-bottom:1.5rem;">
+        България има богата, но малко позната история на феминистко движение. Още в края на XIX век жени организират дружества, издават вестници и настояват за право на образование и глас. Социализмът донася формално равенство, но и нови противоречия — след 1989 г. темата отново излиза на дневен ред в изцяло нов контекст.
+      </p>
+      <p style="font-size:1rem;line-height:1.8;color:#5a3a44;font-weight:300;">
+        Днес България е сред страните с <strong style="color:var(--terracotta)">най-голяма разлика в заплащането</strong> в ЕС, а участието на жените в политиката остава ниско — предизвикателства, около които активистките продължават да работят.
+      </p>
+    </div>
+    <div class="bg-sidebar reveal">
+      <h4>България в цифри (2024)</h4>
+      <div class="bg-stat-row">
+        <span class="bg-stat-label">Право на глас за жените</span>
+        <span class="bg-stat-value">1937 г.</span>
+      </div>
+      <div class="bg-stat-row">
+        <span class="bg-stat-label">Разлика в заплащането (ЕС)</span>
+        <span class="bg-stat-value">~13% в полза на мъжете</span>
+      </div>
+      <div class="bg-stat-row">
+        <span class="bg-stat-label">Жени в парламента</span>
+        <span class="bg-stat-value">~25%</span>
+      </div>
+      <div class="bg-stat-row">
+        <span class="bg-stat-label">Ратифицира Истанбулската конвенция</span>
+        <span class="bg-stat-value">Не (отхвърлена 2018 г.)</span>
+      </div>
+      <div class="bg-stat-row">
+        <span class="bg-stat-label">Организации за права на жените</span>
+        <span class="bg-stat-value">40+ НПО</span>
+      </div>
+      <div class="bg-stat-row">
+        <span class="bg-stat-label">Равенство при пенсия</span>
+        <span class="bg-stat-value">Въведено 1944 г.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Хронология БГ -->
+  <div class="bg-timeline reveal">
+    <div class="bg-timeline-title">Ключови моменти в България</div>
+    <div class="bg-events">
+      <div class="bg-event">
+        <div class="bg-event-year">1878</div>
+        <div class="bg-event-title">Освобождението и жените</div>
+        <p class="bg-event-desc">След Освобождението жените участват активно в благотворителни дружества. Основават се първите женски организации в Търново и Пловдив.</p>
+      </div>
+      <div class="bg-event">
+        <div class="bg-event-year">1901</div>
+        <div class="bg-event-title">Женският съюз</div>
+        <p class="bg-event-desc">Основан е Българският женски съюз — първата национална организация, борила се за право на образование, труд и политически права на жените.</p>
+      </div>
+      <div class="bg-event">
+        <div class="bg-event-year">1937</div>
+        <div class="bg-event-title">Ограничено право на глас</div>
+        <p class="bg-event-desc">Омъжените жени получават право да гласуват на местни избори — частична победа след десетилетия на борба. Пълно право на глас — едва 1945 г.</p>
+      </div>
+      <div class="bg-event">
+        <div class="bg-event-year">1944→</div>
+        <div class="bg-event-title">Социализмът и равенството</div>
+        <p class="bg-event-desc">НРБ въвежда формално равенство: жените масово навлизат в труда, образованието, науката. Но „двойната смяна" остава — работа + домакинство.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Личности БГ -->
+  <div style="max-width:1200px;margin:0 auto 2rem;">
+    <div class="bg-timeline-title reveal">Български жени, оставили следа</div>
+  </div>
+  <div class="bg-figures-grid" style="grid-template-columns: repeat(4,1fr);">
+    <div class="bg-figure reveal">
+      <div class="bg-figure-icon">🖋️</div>
+      <div class="bg-figure-name">
+        Екатерина Каравелова
+        <a href="https://bg.wikipedia.org/wiki/Екатерина_Каравелова" target="_blank" rel="noopener" class="wiki-icon" title="Wikipedia">W</a>
+      </div>
+      <div class="bg-figure-dates">1860 – 1947</div>
+      <div class="bg-figure-role">Активист · Феминист</div>
+      <p class="bg-figure-bio">Съпруга на министър-председателя Петко Каравелов, тя самостоятелно участва в обществения живот. Издава вестник „Женски глас" и е председател на Българския женски съюз — борец за правото на глас. <span class="info-trigger" onclick="openModal('karavelova')">Още →</span></p>
+    </div>
+    <div class="bg-figure reveal">
+      <div class="bg-figure-icon">📚</div>
+      <div class="bg-figure-name">
+        Анна Карима
+        <a href="https://bg.wikipedia.org/wiki/Анна_Карима" target="_blank" rel="noopener" class="wiki-icon" title="Wikipedia">W</a>
+      </div>
+      <div class="bg-figure-dates">1871 – 1949</div>
+      <div class="bg-figure-role">Писателка · Поетеса</div>
+      <p class="bg-figure-bio">Псевдоним на Анна Хаджийска — поетеса и прозаик, чиито произведения поставят жената в центъра като мислещ и чувстващ субект. Пионер на феминистката литература у нас. <span class="info-trigger" onclick="openModal('karima')">Още →</span></p>
+    </div>
+    <div class="bg-figure reveal">
+      <div class="bg-figure-icon">⚗️</div>
+      <div class="bg-figure-name">
+        Д-р Тота Венкова
+        <a href="https://bg.wikipedia.org/wiki/Тота_Венкова" target="_blank" rel="noopener" class="wiki-icon" title="Wikipedia">W</a>
+      </div>
+      <div class="bg-figure-dates">1855 – 1921</div>
+      <div class="bg-figure-role">Лекарка · Благотворителка</div>
+      <p class="bg-figure-bio">Първата българка с диплома за лекар (1886). Работи като самарянка в Руско-турската война, после учи медицина в Петербург. Основава акушерски курсове и помага безплатно на бедни и болни жени. <span class="info-trigger" onclick="openModal('venkova')">Още →</span></p>
+    </div>
+    <div class="bg-figure reveal">
+      <div class="bg-figure-icon">🏛️</div>
+      <div class="bg-figure-name">
+        Илияна Йотова
+        <a href="https://bg.wikipedia.org/wiki/Илияна_Йотова" target="_blank" rel="noopener" class="wiki-icon" title="Wikipedia">W</a>
+      </div>
+      <div class="bg-figure-dates">1964 –</div>
+      <div class="bg-figure-role">Президент · Политик</div>
+      <p class="bg-figure-bio">Вицепрезидент на България (2017–2026), а от 23 януари 2026 г. — първата жена президент на България след оставката на Румен Радев. Евродепутат в продължение на 10 години. <span class="info-trigger" onclick="openModal('yotova')">Още →</span></p>
+    </div>
+  </div>
+
+  <!-- Глобални жени лидери -->
+  <div style="max-width:1200px;margin:3rem auto 2rem;">
+    <div class="bg-timeline-title reveal">Жени лидери по света</div>
+  </div>
+  <div style="max-width:1200px;margin:0 auto 4rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;" class="bg-world-grid">
+    <div class="bg-figure reveal" style="background:var(--deep);">
+      <div class="bg-figure-icon">🌍</div>
+      <div class="bg-figure-name">
+        Кристалина Георгиева
+        <a href="https://bg.wikipedia.org/wiki/Кристалина_Георгиева" target="_blank" rel="noopener" class="wiki-icon" title="Wikipedia">W</a>
+      </div>
+      <div class="bg-figure-dates">1953 –</div>
+      <div class="bg-figure-role">Директор на МВФ</div>
+      <p class="bg-figure-bio">Първата българка начело на Международния валутен фонд (от 2019 г.). Бивш главен изпълнителен директор на Световната банка и европейски комисар. Авторка на над 100 публикации. <span class="info-trigger" onclick="openModal('georgieva')">Още →</span></p>
+    </div>
+    <div class="bg-figure reveal" style="background:var(--deep);">
+      <div class="bg-figure-icon">🌎</div>
+      <div class="bg-figure-name">
+        Дилма Русеф
+        <a href="https://bg.wikipedia.org/wiki/Дилма_Русеф" target="_blank" rel="noopener" class="wiki-icon" title="Wikipedia">W</a>
+      </div>
+      <div class="bg-figure-dates">1947 –</div>
+      <div class="bg-figure-role">36-ти президент на Бразилия</div>
+      <p class="bg-figure-bio">Първата жена президент на Бразилия (2011–2016). Преди политиката — партизанка срещу военната диктатура, арестувана и изтезавана. През 2023 г. става президент на банката на БРИКС. <span class="info-trigger" onclick="openModal('rousseff')">Още →</span></p>
+    </div>
+    <div class="bg-figure reveal" style="background:var(--deep);">
+      <div class="bg-figure-icon">🕊️</div>
+      <div class="bg-figure-name">
+        Джасинда Ардърн
+        <a href="https://bg.wikipedia.org/wiki/Джасинда_Ардърн" target="_blank" rel="noopener" class="wiki-icon" title="Wikipedia">W</a>
+      </div>
+      <div class="bg-figure-dates">1980 –</div>
+      <div class="bg-figure-role">40-ти премиер на Нова Зеландия</div>
+      <p class="bg-figure-bio">Най-младата жена премиер в света (37 год.) и втората жена в историята, която ражда докато е на власт. Световно призната за реакцията си след атентата в Крайстчърч (2019). <span class="info-trigger" onclick="openModal('ardern')">Още →</span></p>
+    </div>
+  </div>
+
+
+  <!-- Съвременни движения -->
+  <div style="max-width:1200px;margin:0 auto 2rem;">
+    <div class="bg-timeline-title reveal">Съвременни движения в България</div>
+  </div>
+  <div style="max-width:1200px;margin:0 auto 4rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;" class="bg-modern-grid">
+    <div class="bg-event reveal" style="border-top-color:var(--terracotta);">
+      <div class="bg-event-year" style="font-size:1.2rem;color:var(--terracotta);">2017</div>
+      <div class="bg-event-title">#MeToo в България</div>
+      <p class="bg-event-desc">Глобалното движение достига и до България — жени от медиите, театъра и академичния свят споделят свои истории за сексуален тормоз, отваряйки публичен дебат.</p>
+    </div>
+    <div class="bg-event reveal" style="border-top-color:var(--gold);">
+      <div class="bg-event-year" style="font-size:1.2rem;color:var(--gold);">2019–днес</div>
+      <div class="bg-event-title">Феминистки медии</div>
+      <p class="bg-event-desc">Онлайн платформи като „Тя каза" и подкасти с феминистка насоченост дадоха нов глас на движението и достигнаха до млади аудитории в цялата страна.</p>
+    </div>
+    <div class="bg-event reveal" style="border-top-color:var(--sage);">
+      <div class="bg-event-year" style="font-size:1.2rem;color:var(--sage);">Ежегодно</div>
+      <div class="bg-event-title">8 март — не само цветя</div>
+      <p class="bg-event-desc">Все повече организации използват 8 март не за цветя и поздрави, а за демонстрации, дискусии и искания за реална политическа промяна.</p>
+    </div>
+  </div>
+
+  <!-- Предизвикателства днес -->
+  <div class="bg-challenges reveal">
+    <div>
+      <h4><span>⚠️</span> Предизвикателства днес</h4>
+      <div class="challenge-item">
+        <div class="challenge-icon">💰</div>
+        <div class="challenge-text">
+          <strong>Разлика в заплащането</strong>
+          България е сред страните с по-висока разлика в заплащането между мъжете и жените в ЕС, особено в частния сектор.
+        </div>
+      </div>
+      <div class="challenge-item">
+        <div class="challenge-icon">🏛️</div>
+        <div class="challenge-text">
+          <strong>Политическо представителство</strong>
+          Жените заемат около 25% от местата в парламента — под европейската средна. Малко жени ръководят министерства или общини.
+        </div>
+      </div>
+      <div class="challenge-item">
+        <div class="challenge-icon">🏠</div>
+        <div class="challenge-text">
+          <strong>Домашно насилие</strong>
+          Отхвърлянето на Истанбулската конвенция (2018) затруднява законодателната защита. НПО компенсират с кризисни центрове и подкрепа.
+        </div>
+      </div>
+    </div>
+    <div>
+      <h4><span>✨</span> Причини за надежда</h4>
+      <div class="challenge-item">
+        <div class="challenge-icon">🎓</div>
+        <div class="challenge-text">
+          <strong>Образование</strong>
+          Жените съставляват над 55% от студентите в България — по-висок дял от мъжете. Образованието е ключ за промяна.
+        </div>
+      </div>
+      <div class="challenge-item">
+        <div class="challenge-icon">📢</div>
+        <div class="challenge-text">
+          <strong>Активно гражданско общество</strong>
+          Организации като „Фондация Джендър алтернативи", „ЦеСАМО" и „Алианс за защита от насилие" работят ежедневно за правата на жените.
+        </div>
+      </div>
+      <div class="challenge-item">
+        <div class="challenge-icon">📱</div>
+        <div class="challenge-text">
+          <strong>Млади гласове</strong>
+          Социалните мрежи дадоха платформа на нова генерация български феминисти, които свързват местните проблеми с глобалните движения.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- IMPACT STATS -->
+<section class="impact-section" id="impact">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="section-label">Защо има значение?</div>
+    <h2 class="section-title">Феминизмът в цифри</h2>
+    <div class="stats-grid reveal">
+      <div class="stat-box">
+        <div class="stat-number">130+</div>
+        <div class="stat-label">Страни са приели закони за равно заплащане под влияние на феминистките движения</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">1893</div>
+        <div class="stat-label">Годината на първото право на глас за жени — само преди 130 години</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">80%</div>
+        <div class="stat-label">от позициите на власт в света все още се заемат от мъже</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">∞</div>
+        <div class="stat-label">Работата за равенство продължава — всяко поколение добавя нова глава</div>
+      </div>
+    </div>
+    <div style="margin-top:4rem;padding:2.5rem;background:rgba(232,180,184,0.08);border:1px solid rgba(232,180,184,0.2);border-radius:20px;" class="reveal">
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--blush);margin-bottom:1rem;">Феминизмът не е „женска тема"</h3>
+      <p style="color:#c9b8bc;line-height:1.8;font-size:0.95rem;font-weight:300;">Феминизмът се бори за равенство за <em style="color:var(--blush)">всички хора</em> — независимо от пол, раса или произход. Патриархалните норми ограничават и мъжете: налагат им роли, потискат емоциите им и определят ценността им чрез сила и успех. Движенията за равенство освобождават цялото общество.</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="quiz-section" id="quiz">
+  <div class="quiz-container">
+    <div class="section-label reveal" style="color:var(--blush)">Провери знанията си</div>
+    <h2 class="section-title reveal">Тест: Феминизмът в историята</h2>
+
+    <div class="quiz-progress-bar">
+      <div class="quiz-progress-fill" id="quizProgress" style="width:0%"></div>
+    </div>
+
+    <div class="quiz-card" id="quizCard">
+      <!-- Questions injected by JS -->
+    </div>
+
+    <div class="quiz-result" id="quizResult">
+      <div class="quiz-result-score" id="resultScore"></div>
+      <div class="quiz-result-title" id="resultTitle"></div>
+      <p class="quiz-result-msg" id="resultMsg"></p>
+      <button class="quiz-btn" onclick="restartQuiz()">↺ Опитай отново</button>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL OVERLAY -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOnOverlay(event)">
+  <div class="modal-content" id="modalContent">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal()">×</button>
+      <div class="modal-title" id="modalTitle"></div>
+      <div class="modal-subtitle" id="modalSubtitle"></div>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- MOBILE QR SECTION (visible only on mobile) -->
+<section class="mobile-qr-section">
+  <img src="qr-code.png" alt="QR код за достъп до урока">
+  <h3>Сподели урока</h3>
+  <p>Сканирай кода, за да отвориш урока<br>на друго устройство или да го споделиш</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-title">♀ Феминизмът — Урок по история</div>
+    <div style="font-size:0.78rem;color:#a89090;margin-top:0.4rem;">История · 12 клас · Презентация</div>
+  </div>
+  <div class="footer-qr">
+    <img src="qr-code.png" alt="QR код">
+    <div class="footer-qr-text">Сканирай за достъп<br>от телефон</div>
+  </div>
+  <div class="footer-meta">
+    Използвани материали: академични източници,<br>
+    исторически архиви и феминистка теория.<br>
+    © 2026 — Образователен проект
+  </div>
+</footer>
+
+<script>
+  // ── MODAL DATA ──
+  const modalData = {
+    wollstonecraft: {
+      title: 'Мери Уолстъункрафт',
+      subtitle: '1759 – 1797 · Британска философка и писателка',
+      content: `
+        <img src="images/wollstonecraft.jpg" style="width:100%;height:600px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;box-shadow:0 8px 30px rgba(0,0,0,0.15);">
+        <div class="modal-section">
+          <h4>🎓 Образование и контекст</h4>
+          <p>Родена в Лондон в средна класа, Мери израства във време, когато жените нямат достъп до висше образование. Самообразова се чрез четене и дискусии с интелектуалци от епохата.</p>
+        </div>
+        <div class="modal-section">
+          <h4>📖 Основни произведения</h4>
+          <ul>
+            <li><strong>"Защита на правата на жената"</strong> (1792) —革 революционен текст, в който аргументира, че жените не са по природа по-малоумни, а са лишени от образование</li>
+            <li><strong>"Мисли за образованието на дъщерите"</strong> (1787)</li>
+            <li>Романи и пътеписи с феминистка тематика</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <h4>💡 Наследство</h4>
+          <p>Въпреки че умира млада на 38 години, нейните идеи стават основа на либералния феминизъм. Дъщеря ѝ Мери Шели става автор на "Франкенщайн".</p>
+        </div>
+        <a href="https://bg.wikipedia.org/wiki/Мери_Уолстънкрафт" target="_blank" rel="noopener" class="wiki-link">📖 Прочети повече в Wikipedia</a>
+      `
+    },
+    anthony: {
+      title: 'Сюзан Б. Антъни',
+      subtitle: '1820 – 1906 · Американска суфражетка и активистка',
+      content: `
+        <img src="images/anthony.jpg" style="width:100%;height:600px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;box-shadow:0 8px 30px rgba(0,0,0,0.15);">
+        <div class="modal-section">
+          <h4>✊ Активизъм</h4>
+          <p>Работи заедно с Елизабет Кейди Стентън за премахване на робството и права на жените. През 1872 г. е арестувана и глобена с $100 за гласуване — отказва да плати.</p>
+        </div>
+        <div class="modal-section">
+          <h4>🗳️ Суфражистко движение</h4>
+          <ul>
+            <li>Основава Национална асоциация за избирателни права на жените (1869)</li>
+            <li>Пътува из цялата страна, произнася над 100 речи годишно</li>
+            <li>Умира 14 години преди 19-тата поправка (1920)</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <h4>🏆 Признание</h4>
+          <p>През 1979 г. става първата жена на американска монета ($1). Нейното лице символизира борбата за равенство.</p>
+        </div>
+        <a href="https://bg.wikipedia.org/wiki/Сюзан_Антъни" target="_blank" rel="noopener" class="wiki-link">📖 Прочети повече в Wikipedia</a>
+      `
+    },
+    beauvoir: {
+      title: 'Симон дьо Бовоар',
+      subtitle: '1908 – 1986 · Френска философка и писателка',
+      content: `
+        <img src="images/beauvoir.jpg" style="width:100%;height:600px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;box-shadow:0 8px 30px rgba(0,0,0,0.15);">
+        <div class="modal-section">
+          <h4>📚 "Вторият пол" (1949)</h4>
+          <p>Революционна книга, която анализира как обществото конструира жените като "другото". Известната фраза: <em>"Не се раждаш жена — ставаш жена"</em> означава, че женствеността е социален конструкт, не биологична съдба.</p>
+        </div>
+        <div class="modal-section">
+          <h4>🤝 Връзка със Сартр</h4>
+          <p>Партньорство с философа Жан-Пол Сартр — отказват брак и деца, за да запазят интелектуална и лична свобода. Моделът им за връзка влияе на цяло поколение.</p>
+        </div>
+        <div class="modal-section">
+          <h4>💭 Философия</h4>
+          <ul>
+            <li>Екзистенциализъм — жената трябва да се освободи чрез избор и действие</li>
+            <li>Критикува "вечната женственост" като мит, поробващ жените</li>
+            <li>Влияе на втората вълна на феминизма (60-те и 70-те)</li>
+          </ul>
+        </div>
+        <a href="https://bg.wikipedia.org/wiki/Симон_дьо_Бовоар" target="_blank" rel="noopener" class="wiki-link">📖 Прочети повече в Wikipedia</a>
+      `
+    },
+    hooks: {
+      title: 'Белл Хукс',
+      subtitle: '1952 – 2021 · Американска теоретичка и активистка',
+      content: `
+        <img src="images/hooks.jpg" style="width:100%;height:600px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;box-shadow:0 8px 30px rgba(0,0,0,0.15);">
+        <div class="modal-section">
+          <h4>🌍 Интерсекционален феминизъм</h4>
+          <p>Белл Хукс (псевдоним на Gloria Jean Watkins) критикува белия средно-класов феминизъм и показва как раса, класа и пол се пресичат. Нейната работа е основополагаща за intersectional феминизма.</p>
+        </div>
+        <div class="modal-section">
+          <h4>📖 Ключови книги</h4>
+          <ul>
+            <li><strong>"Ain't I a Woman?"</strong> (1981) — анализ на расизма във феминизма</li>
+            <li><strong>"Feminism is for Everybody"</strong> (2000) — достъпно въведение в феминизма</li>
+            <li><strong>"The Will to Change: Men, Masculinity, and Love"</strong> — за патриархалното влияние върху мъжете</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <h4>💡 Наследство</h4>
+          <p>Белл Хукс пише с малки букви (bell hooks), за да премести фокуса от личността към идеите. Нейната работа продължава да вдъхновява активисти по целия свят.</p>
+        </div>
+        <a href="https://en.wikipedia.org/wiki/Bell_hooks" target="_blank" rel="noopener" class="wiki-link">📖 Read more on Wikipedia (EN)</a>
+      `
+    },
+    georgieva: {
+      title: 'Кристалина Георгиева',
+      subtitle: '1953 – · Управляващ директор на МВФ',
+      content: `
+        <img src="images/georgieva.jpg" style="width:100%;height:600px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;box-shadow:0 8px 30px rgba(0,0,0,0.15);">
+        <div class="modal-section">
+          <h4>💼 От България до върха на света</h4>
+          <p>Родена в София през комунистическия режим. Баща ѝ е внук на революционера Иван Кършовски. Семейството ѝ се противопоставя на режима — брат ѝ е хвърлен в затвора за опит да напусне страната, което хвърля сянка върху кариерата ѝ.</p>
+        </div>
+        <div class="modal-section">
+          <h4>🌍 Световна кариера</h4>
+          <ul>
+            <li><strong>1993-2010:</strong> Световна банка — от икономист по околната среда до вицепрезидент</li>
+            <li><strong>2010-2019:</strong> Европейски комисар по хуманитарна помощ и бюджет (161 млрд. евро)</li>
+            <li><strong>2017-2019:</strong> Главен изпълнителен директор на Световната банка</li>
+            <li><strong>От 2019:</strong> Управляващ директор на МВФ (втори мандат от 2024)</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <h4>🏆 Постижения в МВФ</h4>
+          <p>Под нейно ръководство МВФ влива <strong>1 трилион долара</strong> в световната икономика по време на COVID-19 кризата. Завършва исторически 16-ти преглед на квотите, увеличавайки дяловете с 50%. Повишава многообразието в ръководството на МВФ.</p>
+        </div>
+        <div class="modal-section">
+          <h4>💡 Лична философия</h4>
+          <p>„Моето семейство не беше богато. Баща ми се разболя млад и трябваше да се борим с живота." Познава хиперинфлацията, която унищожи спестяванията на майка ѝ. Тези лични преживявания оформят нейния подход към глобалната икономическа стабилност.</p>
+        </div>
+        <a href="https://bg.wikipedia.org/wiki/Кристалина_Георгиева" target="_blank" rel="noopener" class="wiki-link">📖 Прочети повече в Wikipedia</a>
+      `
+    },
+    karavelova: {
+      title: 'Екатерина Каравелова',
+      subtitle: '1860 – 1947 · Феминистка и обществена дейница',
+      content: `
+        <img src="images/karavelova.jpg" style="width:100%;height:600px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;box-shadow:0 8px 30px rgba(0,0,0,0.15);">        <div class="modal-section">
+          <h4>👩‍💼 Обществена дейност</h4>
+          <p>Съпруга на министър-председателя Петко Каравелов, но далеч от образа на „съпруга на". Активно участва в обществения живот на България след Освобождението и става водеща фигура във феминистското движение.</p>
+        </div>
+        <div class="modal-section">
+          <h4>📰 "Женски глас"</h4>
+          <p>Издава вестник „Женски глас", който се бори за правата на жените в образованието, труда и политиката. Вестникът излиза редовно и е един от основните информационни канали на феминистката мисъл в България.</p>
+        </div>
+        <div class="modal-section">
+          <h4>✊ Българският женски съюз</h4>
+          <p>Председател на Българския женски съюз. Организацията настоява за право на глас за жените и води кампании за достъп до образование и професионална реализация.</p>
+        </div>
+        <a href="https://bg.wikipedia.org/wiki/Екатерина_Каравелова" target="_blank" rel="noopener" class="wiki-link">📖 Прочети повече в Wikipedia</a>
+      `
+    },
+    karima: {
+      title: 'Анна Карима (Анна Хаджийска)',
+      subtitle: '1871 – 1949 · Писателка и феминистка',
+      content: `
+        <img src="images/karima.jpg" style="width:100%;height:600px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;box-shadow:0 8px 30px rgba(0,0,0,0.15);">        <div class="modal-section">
+          <h4>✍️ Литературно творчество</h4>
+          <p>Псевдоним на Анна Тодорова Велкова-Хаджийска. Пише стихове, разкази, романи и драми, които поставят жената в центъра като мислеща и чувстваща личност - революционно за епохата.</p>
+        </div>
+        <div class="modal-section">
+          <h4>🎓 Борба за образование</h4>
+          <ul>
+            <li>През 1897 г. създава женското образователно дружество „Съзнание"</li>
+            <li>Подава петиция в Народното събрание за допускане на жени в Софийския университет</li>
+            <li>Успехът идва през 1901 г. - жените получават достъп до висше образование</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <h4>💔 Лична съдба</h4>
+          <p>Преживява тежък брак с ревнив съпруг и зла свекърва. След развода остава сама с две деца, но не се подчинява на мъж до края на живота си. Умира самотна в хотел „Славянска беседа" през 1949 г.</p>
+        </div>
+        <a href="https://bg.wikipedia.org/wiki/Анна_Карима" target="_blank" rel="noopener" class="wiki-link">📖 Прочети повече в Wikipedia</a>
+      `
+    },
+    venkova: {
+      title: 'Д-р Тота Венкова',
+      subtitle: '1855 – 1921 · Първата българка лекар',
+      content: `
+        <img src="images/venkova.jpg" style="width:100%;height:600px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;box-shadow:0 8px 30px rgba(0,0,0,0.15);">
+        <div class="modal-section">
+          <h4>🏥 Път към медицината</h4>
+          <p>Остава сирак отрано, но е подпомогната от Женското благотворително дружество „Майчина грижа". Работи като самарянка в Руско-турската война (1877-1878), където се грижи за ранени войници и открива призванието си.</p>
+        </div>
+        <div class="modal-section">
+          <h4>🎓 Образование и специализации</h4>
+          <ul>
+            <li>1886 г. - дипломира се в Петербург като първата българка лекар</li>
+            <li>1893 г. - специализация по детски и вътрешни болести в Петербург</li>
+            <li>След това - специализация по акушерство и гинекология във Виена</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <h4>💚 Благотворителност</h4>
+          <p>Превръща дома си в София в безплатна акушеро-гинекологична консултация. До края на живота си помага на болни, бедни и бездомни жени. Завещава имуществото си на санаториум за гърдоболни и на женско училище в Габрово.</p>
+        </div>
+        <a href="https://bg.wikipedia.org/wiki/Тота_Венкова" target="_blank" rel="noopener" class="wiki-link">📖 Прочети повече в Wikipedia</a>
+      `
+    },
+    yotova: {
+      title: 'Илияна Йотова',
+      subtitle: '1964 – · Първата жена президент на България',
+      content: `
+       <img src="images/yotova.jpg" style="width:100%;height:600px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;box-shadow:0 8px 30px rgba(0,0,0,0.15);">
+        <div class="modal-section">
+          <h4>🏛️ Политическа кариера</h4>
+          <p>Евродепутат в продължение на 10 години (2007-2017), където работи по въпроси на образованието, културата и правата на жените. През 2017 г. става вицепрезидент на България заедно с Румен Радев.</p>
+        </div>
+        <div class="modal-section">
+          <h4>👑 Първа жена президент</h4>
+          <p>На 23 януари 2026 г. след оставката на президента Румен Радев, Илияна Йотова встъпва в длъжността президент на България - първата жена в тази позиция в историята на страната.</p>
+        </div>
+        <div class="modal-section">
+          <h4>🎯 Приоритети</h4>
+          <ul>
+            <li>Образование и достъп до културно наследство</li>
+            <li>Подкрепа за българите в чужбина</li>
+            <li>Европейска интеграция и регионално сътрудничество</li>
+          </ul>
+        </div>
+        <a href="https://bg.wikipedia.org/wiki/Илияна_Йотова" target="_blank" rel="noopener" class="wiki-link">📖 Прочети повече в Wikipedia</a>
+      `
+    },
+    rousseff: {
+      title: 'Дилма Русеф',
+      subtitle: '1947 – · 36-ти президент на Бразилия',
+      content: `
+        <img src="images/rousseff.jpg" style="width:100%;height:600px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;box-shadow:0 8px 30px rgba(0,0,0,0.15);">
+        <div class="modal-section">
+          <h4>✊ Борба срещу диктатурата</h4>
+          <p>В младостта си се присъединява към партизанското движение срещу военната диктатура в Бразилия (1964-1985). Арестувана е, изтезавана и прекарва три години в затвора за политическите си убеждения.</p>
+        </div>
+        <div class="modal-section">
+          <h4>👩‍💼 Президентство (2011-2016)</h4>
+          <ul>
+            <li>Първата жена президент на Бразилия</li>
+            <li>Преизбрана през 2014 г. за втори мандат</li>
+            <li>Импийчмънт през 2016 г. заради политически спорове</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <h4>🌍 След президентството</h4>
+          <p>През 2023 г. е избрана за президент на Новата банка за развитие (НБР) на БРИКС - международна финансова институция, създадена от Бразилия, Русия, Индия, Китай и Южна Африка.</p>
+        </div>
+        <a href="https://bg.wikipedia.org/wiki/Дилма_Русеф" target="_blank" rel="noopener" class="wiki-link">📖 Прочети повече в Wikipedia</a>
+      `
+    },
+    ardern: {
+      title: 'Джасинда Ардърн',
+      subtitle: '1980 – · 40-ти премиер на Нова Зеландия',
+      content: `
+       <img src="images/ardern.jpg" style="width:100%;height:600px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;box-shadow:0 8px 30px rgba(0,0,0,0.15);">        <div class="modal-section">
+          <h4>⚡ Най-младата жена премиер</h4>
+          <p>На 37 години става най-младата жена премиер в света (2017). През 2018 г. ражда дъщеря си Нив докато е на поста - втората жена държавен глава в историята, която ражда докато управлява.</p>
+        </div>
+        <div class="modal-section">
+          <h4>🕊️ Лидерство в криза</h4>
+          <ul>
+            <li>Реакцията след атентата в Крайстчърч (2019) - "Те са нас. Те не са нас" и незабавна промяна в законите за оръжията</li>
+            <li>Управление на COVID-19 пандемията с един от най-ниските брой жертви в света</li>
+            <li>Емпатичен и човешки стил на управление</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <h4>💭 Оставка и наследство</h4>
+          <p>През януари 2023 г. обявява оставка с думите: "Просто нямам повече в резервоара си, за да продължа". Световно призната за съчетаването на сила с човечност в политиката.</p>
+        </div>
+        <a href="https://bg.wikipedia.org/wiki/Джасинда_Ардърн" target="_blank" rel="noopener" class="wiki-link">📖 Прочети повече в Wikipedia</a>
+      `
+    }
+  };
+
+  // ── MODAL FUNCTIONS ──
+  function openModal(id) {
+    const data = modalData[id];
+    if (!data) return;
+    
+    document.getElementById('modalTitle').textContent = data.title;
+    document.getElementById('modalSubtitle').textContent = data.subtitle;
+    document.getElementById('modalBody').innerHTML = data.content;
+    document.getElementById('modalOverlay').classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('modalOverlay').classList.remove('show');
+    document.body.style.overflow = '';
+  }
+
+  function closeModalOnOverlay(event) {
+    if (event.target.id === 'modalOverlay') closeModal();
+  }
+
+  // ESC key to close
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // ── NAV TOGGLE ──
+  function toggleNav() {
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.classList.toggle('open');
+    links.classList.toggle('open');
+  }
+  function closeNav() {
+    document.getElementById('navToggle').classList.remove('open');
+    document.getElementById('navLinks').classList.remove('open');
+  }
+
+  // ── SCROLL REVEAL ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal, .timeline-item').forEach(el => observer.observe(el));
+
+  // ── QUIZ ──
+  const questions = [
+    {
+      q: 'Коя е първата страна в света, която дава право на глас на жените?',
+      options: ['Великобритания', 'Нова Зеландия', 'Съединените щати', 'Австралия'],
+      correct: 1,
+      feedback: 'Нова Зеландия е пионерът — жените там получават право на глас на 19 септември 1893 г., след дълга кампания водена от Кейт Шепард.'
+    },
+    {
+      q: 'Кога жените в България получават ограничено право на глас (на местни избори)?',
+      options: ['1920 г.', '1929 г.', '1937 г.', '1945 г.'],
+      correct: 2,
+      feedback: 'През 1937 г. омъжените жени в България получават право да гласуват само на местни избори. Пълно избирателно право — едва след 1945 г.'
+    },
+    {
+      q: 'Кой философски труд е основополагащ за феминистката теория на XX век?',
+      options: ['"Капиталът" на Маркс', '"Вторият пол" на Симон дьо Бовоар', '"Женска мистика" на Бети Фридан', '"Защита на правата на жената" на Мери Уолстъункрафт'],
+      correct: 1,
+      feedback: '"Вторият пол" (1949) на Симон дьо Бовоар анализира как жената е конструирана като „другото" в обществото и е основа на феминистката философия.'
+    },
+    {
+      q: 'Движението #MeToo набира глобален мащаб в коя година?',
+      options: ['2013', '2015', '2017', '2019'],
+      correct: 2,
+      feedback: '#MeToo набира сила в октомври 2017 г., след разкритията около Харви Уайнстийн. Хаштагът беше използван милиони пъти в рамките на дни.'
+    },
+    {
+      q: 'Как се казва националната организация, основана в България през 1901 г. за борба за права на жените?',
+      options: ['Женски глас', 'Народен женски съюз', 'Българският женски съюз', 'Дружество за равенство'],
+      correct: 2,
+      feedback: 'Българският женски съюз е основан през 1901 г. и се бори за право на образование, труд и политически права на жените в България.'
+    },
+    {
+      q: 'Кое от следните е постижение на Първата вълна на феминизма?',
+      options: ['Закон за равно заплащане', 'Право на аборт', 'Право на глас за жените', 'ЛГБТК+ права'],
+      correct: 2,
+      feedback: 'Първата вълна (краят на XIX – нач. XX в.) се съсредоточава върху суфражизма — правото на жените да гласуват. Останалите постижения са от по-късните вълни.'
+    },
+    {
+      q: 'Каква е приблизителната разлика в заплащането между мъже и жени в България спрямо данните от 2024 г.?',
+      options: ['~5% в полза на мъжете', '~13% в полза на мъжете', '~25% в полза на мъжете', 'Няма разлика'],
+      correct: 1,
+      feedback: 'България е сред страните с по-висока разлика в заплащането в ЕС — около 13% в полза на мъжете, особено в частния сектор.'
+    },
+    {
+      q: 'Кой термин описва феминизма, отчитащ пресичането на пол, раса, класа и други идентичности?',
+      options: ['Либерален феминизъм', 'Радикален феминизъм', 'Интерсекционален феминизъм', 'Социалистически феминизъм'],
+      correct: 2,
+      feedback: 'Интерсекционалният (пресечен) феминизъм — концепция, въведена от Кимберлé Крийншоу — признава, че опресията е многопластова и не може да се разглежда само по един ос.'
+    }
+  ];
+
+  let current = 0;
+  let score = 0;
+  let answered = false;
+
+  function renderQuestion() {
+    const q = questions[current];
+    const letters = ['А', 'Б', 'В', 'Г'];
+    const progress = (current / questions.length) * 100;
+    document.getElementById('quizProgress').style.width = progress + '%';
+
+    document.getElementById('quizCard').innerHTML = `
+      <div class="quiz-question-num">Въпрос ${current + 1} от ${questions.length}</div>
+      <div class="quiz-question-text">${q.q}</div>
+      <div class="quiz-options" id="quizOptions">
+        ${q.options.map((opt, i) => `
+          <button class="quiz-option" onclick="selectAnswer(${i})">
+            <span class="quiz-option-letter">${letters[i]}</span>
+            ${opt}
+          </button>
+        `).join('')}
+      </div>
+      <div class="quiz-feedback" id="quizFeedback"></div>
+      <div class="quiz-nav">
+        <span class="quiz-score-display">Резултат: ${score} / ${current}</span>
+        <button class="quiz-btn" id="nextBtn" onclick="nextQuestion()" disabled>
+          ${current < questions.length - 1 ? 'Следващ въпрос →' : 'Виж резултата →'}
+        </button>
+      </div>
+    `;
+    answered = false;
+  }
+
+  function selectAnswer(idx) {
+    if (answered) return;
+    answered = true;
+    const q = questions[current];
+    const opts = document.querySelectorAll('.quiz-option');
+    const feedback = document.getElementById('quizFeedback');
+
+    opts.forEach((opt, i) => {
+      if (i === q.correct) opt.classList.add('correct');
+      else if (i === idx && idx !== q.correct) opt.classList.add('wrong');
+    });
+
+    if (idx === q.correct) {
+      score++;
+      feedback.className = 'quiz-feedback correct-fb show';
+      feedback.innerHTML = '✓ Правилно! ' + q.feedback;
+    } else {
+      feedback.className = 'quiz-feedback wrong-fb show';
+      feedback.innerHTML = '✗ Не съвсем. ' + q.feedback;
+    }
+
+    document.getElementById('nextBtn').disabled = false;
+  }
+
+  function nextQuestion() {
+    current++;
+    if (current >= questions.length) {
+      showResult();
+    } else {
+      renderQuestion();
+    }
+  }
+
+  function showResult() {
+    document.getElementById('quizCard').style.display = 'none';
+    document.getElementById('quizProgress').style.width = '100%';
+    const result = document.getElementById('quizResult');
+    result.classList.add('show');
+    const pct = Math.round((score / questions.length) * 100);
+    document.getElementById('resultScore').textContent = score + '/' + questions.length;
+
+    let title, msg;
+    if (pct >= 90) {
+      title = 'Отличен резултат! 🌟';
+      msg = 'Владееш историята на феминизма отлично. Ти познаваш движението в дълбочина — от суфражетките до съвременните активисти.';
+    } else if (pct >= 70) {
+      title = 'Много добре! 👏';
+      msg = 'Имаш солидни познания по темата. Прегледай секциите, в които не си сигурен/а, за да попълниш картината.';
+    } else if (pct >= 50) {
+      title = 'Добро начало 📖';
+      msg = 'Познаваш основите, но има още какво да научиш. Върни се към урока и опитай теста отново.';
+    } else {
+      title = 'Има какво да научим! 💡';
+      msg = 'Феминизмът е богата тема — разгледай отново разделите за вълните, личностите и историята на България.';
+    }
+
+    document.getElementById('resultTitle').textContent = title;
+    document.getElementById('resultMsg').textContent = msg;
+  }
+
+  function restartQuiz() {
+    current = 0; score = 0; answered = false;
+    document.getElementById('quizResult').classList.remove('show');
+    document.getElementById('quizCard').style.display = 'block';
+    document.getElementById('quizProgress').style.width = '0%';
+    renderQuestion();
+  }
+
+  // Init quiz
+  renderQuestion();
+</script>
+</body>
+</html>
